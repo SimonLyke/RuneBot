@@ -17,7 +17,8 @@ from PlayerLogic import skills_list, activity_list, PlayerLogic
 from DiscordLogic import DiscordLogic
 import time
 import copy
-
+import os
+import sys
 
 def update_buffer(player_name):
     api_data_list = filtered_api_data(player_name=player_name)
@@ -59,7 +60,16 @@ def update_player(player_name):
     players.buffer.thumbnail = players.username[player_name].thumbnail
     players.username[player_name] = copy.deepcopy(players.buffer)
 
-
+def get_webhook_url():
+    if not os.path.exists("WebhookURL.txt"):  # Check if file exists
+        with open("WebhookURL.txt", 'w') as file:  # if not, create an empty file of that name
+            pass  # immediately pass in order to close the file
+        sys.exit("Error: WebhookURL.txt Does Not Exist. File Created, Please Populate With Webhook URL")
+    if not os.path.getsize("WebhookURL.txt") == 0:
+        with open("WebhookURL.txt", "r") as file:  # this is so webhook url is not on git
+            webhook_url = file.readline()
+        return webhook_url
+    sys.exit("Error: WebhookURL.txt Empty. Please Populate With Webhook URL")
 # ------------------------------------------------------------------------------------------------------- main function
 
 def main():
@@ -76,9 +86,5 @@ def main():
 
 if __name__ == "__main__":
     players = PlayerLogic()  # has to be global, could use class but not required
-
-    with open("WebhookURL.txt", "r") as file:  # this is so webhook url is not on git
-        webhook_url = file.readline()
-
-    discord = DiscordLogic(url=webhook_url)  # this is the webhook URL for discord integration
+    discord = DiscordLogic(url=get_webhook_url())  # this is the webhook URL for discord integration
     main()
