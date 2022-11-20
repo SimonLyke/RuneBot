@@ -214,12 +214,11 @@ class PlayerLogic:  # The use of a class is to limit the scope in which the Play
     def import_json(self):
         for player in self.username:
             if os.path.exists(f"players/{player}.json"):
-                with open(f"players/{player}.json") as file:
-                    # name_check = jsonpickle.loads(file.read())
-                    # if name_check.name == player:
-                    file.seek(0)
-                    self.username[player] = jsonpickle.loads(file.read())
-                    print(f"IMPORTED PLAYER: {self.username[player].name}")
+                if not os.path.getsize(f"players/{player}.json") == 0:
+                    with open(f"players/{player}.json") as file:
+                        file.seek(0)
+                        self.username[player] = jsonpickle.loads(file.read())
+                        print(f"IMPORTED PLAYER: {self.username[player].name}")
 
     def init_players(self):
         if not self.player_names_exists():  # Check if file exists, if not create file, return False, exit with error.
