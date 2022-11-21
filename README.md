@@ -11,6 +11,17 @@ However this bot was created to gain experience and for private use solely devel
 
 @github : https://github.com/SimonLyke
 
+.
+.
+
+The embeds look like this : 
+
+![Discord_2022-11-21_20-50-01](https://user-images.githubusercontent.com/94386835/203157313-ccff7f52-f685-40ab-8b76-f238eafd1005.png)
+
+In this example, this player has killed skotizo and completed a hard clue scroll since he last logged off the game.
+
+.
+.
 
 The folder structure should be as follows:
 
@@ -44,12 +55,5 @@ for you to populate
 
 .
 .
-
-The embeds look like this : 
-
-![Discord_2022-11-21_20-50-01](https://user-images.githubusercontent.com/94386835/203157313-ccff7f52-f685-40ab-8b76-f238eafd1005.png)
-
-In this example, this player has killed skotizo and completed a hard clue scroll since he last logged off the game.
-
 
 Any issues with the bot please let me know. Thanks.
