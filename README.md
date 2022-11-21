@@ -39,6 +39,9 @@ a string of a players name only, such as "TheLegend27" (obviously dont add " " i
 WebhookURL.txt should be populated with the webhook integration url for the chosen discord server. You will need to have permission on the server to do this
 and im not going to explain how as there are plenty of up to date tutorials available on the internet. The URL should be placed on the first line.
 
+If neither of the text files exist you can either create them by yourself with the correct names as listed above, or run the program twice and it will generate both
+for you to populate
+
 .
 .
 
