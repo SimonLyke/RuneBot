@@ -59,6 +59,7 @@ def update_player(player_name):
     players.buffer.name = players.username[player_name].name
     players.buffer.thumbnail = players.username[player_name].thumbnail
     players.username[player_name] = copy.deepcopy(players.buffer)
+    # deepcopy is the only method that works, surprisingly it is not significantly slow to use this method
 
 def get_webhook_url():
     if not os.path.exists("WebhookURL.txt"):  # Check if file exists

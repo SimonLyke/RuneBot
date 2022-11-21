@@ -99,7 +99,7 @@ class Player:
         self.chambersOfXericChallenge = Activity(Type.raid, "Chambers Of Xeric Challenge Mode", "https://i.imgur.com/9PGp3p1.png")
         self.chaosElemental = Activity(Type.boss, "Chaos Elemental", "https://i.imgur.com/fV939GA.png")
         self.chaosFanatic = Activity(Type.boss, "Chaos Fanatic", "https://i.imgur.com/AHPcI1o.png")
-        self.commanderZilyana = Activity(Type.boss, "Commander Zilyana", "https://i.imgur.com/AHPcI1o.png")
+        self.commanderZilyana = Activity(Type.boss, "Commander Zilyana", "https://i.imgur.com/rf7vIIV.png")
         self.corporealBeast = Activity(Type.boss, "Corporeal Beast", "https://i.imgur.com/NpsdWii.png")
         self.crazyArchaeologist = Activity(Type.boss, "Crazy Archaeologist", "https://i.imgur.com/W1ja7BF.png")
         self.dagannothPrime = Activity(Type.boss, "Dagganoth Prime", "https://i.imgur.com/oEXx6Gu.png")
