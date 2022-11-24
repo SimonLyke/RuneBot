@@ -16,7 +16,9 @@ However this bot was created to gain experience and for private use solely devel
 
 The embeds look like this : 
 
-![Discord_2022-11-21_20-50-01](https://user-images.githubusercontent.com/94386835/203157313-ccff7f52-f685-40ab-8b76-f238eafd1005.png)
+![image](https://user-images.githubusercontent.com/94386835/203864429-1a84cf62-6921-4b29-a6fe-f271e460b565.png)
+![image](https://user-images.githubusercontent.com/94386835/203864532-c700ef2d-ab71-40ac-9fa3-4611c4008aac.png)
+
 
 In this example, this player has killed skotizo and completed a hard clue scroll since he last logged off the game.
 
