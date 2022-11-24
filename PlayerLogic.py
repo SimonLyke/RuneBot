@@ -222,9 +222,12 @@ class PlayerLogic:  # The use of a class is to limit the scope in which the Play
 
     def init_players(self):
         if not self.player_names_exists():  # Check if file exists, if not create file, return False, exit with error.
-            sys.exit("Error: No Player File Found - File Created - Populate With Usernames Separated One On Each Line")
-        if self.player_names_empty():  # Check if file is empty, if so return false and exit with error.
-            sys.exit("Error: PlayerNames.txt Is Empty. Please Populate With Usernames Separated One On Each Line")
-        self.create_player_buffer()
-        self.player_into_object()
-        self.import_json()
+            print("Error: No Player File Found - File Created - Populate With Usernames Separated One On Each Line")
+            raise SystemExit
+        if not self.player_names_empty():  # Check if file is empty, if empty ignore guard clause and raise systemexit
+            self.create_player_buffer()
+            self.player_into_object()
+            self.import_json()
+            return
+        print("Error: PlayerNames.txt Is Empty. Please Populate With Usernames Separated One On Each Line")
+        raise SystemExit

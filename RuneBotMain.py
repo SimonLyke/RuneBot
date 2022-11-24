@@ -65,12 +65,14 @@ def get_webhook_url():
     if not os.path.exists("WebhookURL.txt"):  # Check if file exists
         with open("WebhookURL.txt", 'w') as file:  # if not, create an empty file of that name
             pass  # immediately pass in order to close the file
-        sys.exit("Error: WebhookURL.txt Does Not Exist. File Created, Please Populate With Webhook URL")
+        print("Error: WebhookURL.txt Does Not Exist. File Created, Please Populate With Webhook URL")
+        raise SystemExit
     if not os.path.getsize("WebhookURL.txt") == 0:
         with open("WebhookURL.txt", "r") as file:  # this is so webhook url is not on git
             webhook_url = file.readline()
         return webhook_url
-    sys.exit("Error: WebhookURL.txt Empty. Please Populate With Webhook URL")
+    print("Error: WebhookURL.txt Empty. Please Populate With Webhook URL")
+    raise SystemExit
 # ------------------------------------------------------------------------------------------------------- main function
 
 def main():
