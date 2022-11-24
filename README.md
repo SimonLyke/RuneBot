@@ -17,6 +17,7 @@ However this bot was created to gain experience and for private use solely devel
 The embeds look like this : 
 
 ![image](https://user-images.githubusercontent.com/94386835/203864429-1a84cf62-6921-4b29-a6fe-f271e460b565.png)
+
 ![image](https://user-images.githubusercontent.com/94386835/203864532-c700ef2d-ab71-40ac-9fa3-4611c4008aac.png)
 
 
