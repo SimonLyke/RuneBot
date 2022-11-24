@@ -75,7 +75,7 @@ class DiscordLogic:
                                   value=f"{int(buffer_activity.rank):,}")
 
         elif player_activity.type == Type.clue_all:
-            if not player_activity.count % 50 == 0:  # if not multiple of 50 then return
+            if not int(player_activity.count) % 50 == 0:  # if not multiple of 50 then return
                 return
             embed = DiscordEmbed(title=f"{player_obj.name} Reached A Clue Scroll Milestone",
                                  color=player_activity.colour)
@@ -116,7 +116,7 @@ class DiscordLogic:
             embed.add_embed_field(name=f"Guardians Of The Rift Rank", value=f"{int(buffer_activity.rank):,}")
 
         else:
-            print("ERROR: Unaccounted for activity")
+            print("\nERROR: Unaccounted for activity")
             return  # This should never execute as all activity types are covered.
 
         embed.set_thumbnail(url=player_activity.icon_url)

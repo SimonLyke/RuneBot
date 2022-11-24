@@ -20,8 +20,11 @@ import copy
 import os
 import sys
 
+
 def update_buffer(player_name):
     api_data_list = filtered_api_data(player_name=player_name)
+    if not api_data_list:
+        return False # API Failure return false so if not update_buffer() executes
     for count, skill in enumerate(api_data_list):
         if count < len(skills_list):
             rank, level, xp = skill.split(',')
@@ -34,6 +37,7 @@ def update_buffer(player_name):
             buffer_activity = players.buffer.__getattribute__(activity_list[(count - len(skills_list))])
             buffer_activity.rank = rank
             buffer_activity.count = kc
+    return True # required because if nothing is returned before function ends default value is None, acts same as False
 
 
 def check_updated_stats(player_name):
@@ -79,7 +83,9 @@ def main():
     while True:
         print("\rUPDATING", end='')
         for player in players.username:
-            update_buffer(player)
+            if not update_buffer(player):
+                print(f"Error : API Requests Failed For {player}")
+                continue
             check_updated_stats(player)
             update_player(player)
             players.export_json()
