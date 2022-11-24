@@ -120,7 +120,6 @@ class DiscordLogic:
             return  # This should never execute as all activity types are covered.
 
         embed.set_thumbnail(url=player_activity.icon_url)
-        embed.set_timestamp()
         message.add_embed(embed)
         message.execute()
         print("\nINFO : PUSHING ACTIVITY TO DISCORD")
