@@ -36,7 +36,8 @@ class DiscordLogic:
             if not int(buffer_skill.level) % 50 == 0:
                 return  # return if overall level not modulo of 50 with remainder of 0
 
-        embed = DiscordEmbed(title=f"{player_obj.name} Reached {skill_name} Level   :   {buffer_skill.level}!",
+        embed = DiscordEmbed(title=f"{player_obj.name} Advanced {skill_name} Level   :   "
+                                   f"{player_skill.level} --> {buffer_skill.level}",
                              color=buffer_skill.colour)
         embed.add_embed_field(name=f"Total {skill_name} XP    ",
                               value=f"{int(buffer_skill.xp):,}")
@@ -58,17 +59,15 @@ class DiscordLogic:
         buffer_activity = getattr(buffer_obj, activity_name)
 
         if player_activity.type == Type.boss:
-            #if not (player_activity.count / 10) % 0 == 0: # if not multiple of 10 then return
-            #return
-            embed = DiscordEmbed(title=f"{player_obj.name} Has Killed {player_activity.name}",
+            embed = DiscordEmbed(title=f"{player_obj.name} Killed {player_activity.name}",
                                  color=player_activity.colour)
-            embed.add_embed_field(name=f"Total {player_activity.name} Kill Count    ",
-                                  value=f"{int(buffer_activity.count):,}")
+            embed.add_embed_field(name=f"{player_activity.name} KC    ",
+                                  value=f"{int(player_activity.count):,} --> {int(buffer_activity.count):,}")
             embed.add_embed_field(name=f"{player_activity.name} Rank",
                                   value=f"{int(buffer_activity.rank):,}")
 
         elif player_activity.type == Type.clue:
-            embed = DiscordEmbed(title=f"{player_obj.name} Has Completed A {player_activity.name}",
+            embed = DiscordEmbed(title=f"{player_obj.name} Completed A {player_activity.name}",
                                  color=player_activity.colour)
             embed.add_embed_field(name=f"{player_activity.name}s Completed    ",
                                   value=f"{int(buffer_activity.count):,}")
@@ -76,9 +75,9 @@ class DiscordLogic:
                                   value=f"{int(buffer_activity.rank):,}")
 
         elif player_activity.type == Type.clue_all:
-            #if not (player_activity.count / 50) % 0 == 0:  # if not multiple of 10 then return
-            return 
-            embed = DiscordEmbed(title=f"{player_obj.name} Has Reached A Clue Scroll Milestone",
+            if not player_activity.count % 50 == 0:  # if not multiple of 50 then return
+                return
+            embed = DiscordEmbed(title=f"{player_obj.name} Reached A Clue Scroll Milestone",
                                  color=player_activity.colour)
             embed.add_embed_field(name=f"{player_activity.name}s Completed    ",
                                   value=f"{int(buffer_activity.count):,}")
@@ -86,40 +85,40 @@ class DiscordLogic:
                                   value=f"{int(buffer_activity.rank):,}")
 
         elif player_activity.type == Type.minigame or player_activity.type == Type.league:
-            embed = DiscordEmbed(title=f"{player_obj.name} Has Gained Points For : {player_activity.name}",
-                                 description=f"Total {player_activity.name} Points : {buffer_activity.count}",
+            embed = DiscordEmbed(title=f"{player_obj.name} Gained Points For : {player_activity.name}",
                                  color=player_activity.colour)
-            embed.add_embed_field(name=f"Total {player_activity.name} Points    ",
-                                  value=f"{int(buffer_activity.count):,}")
+            embed.add_embed_field(name=f"{player_activity.name} Points    ",
+                                  value=f"{int(player_activity.count):,} --> {int(buffer_activity.count):,}")
             embed.add_embed_field(name=f"{player_activity.name} Rank",
                                   value=f"{int(buffer_activity.rank):,}")
 
         elif player_activity.type == Type.raid:
-            embed = DiscordEmbed(title=f"{player_obj.name} Has Completed {player_activity.name}",
+            embed = DiscordEmbed(title=f"{player_obj.name} Completed {player_activity.name}",
                                  color=player_activity.colour)
-            embed.add_embed_field(name=f"Total {player_activity.name} Completions    ",
-                                  value=f"{int(buffer_activity.count):,}")
+            embed.add_embed_field(name=f"{player_activity.name} Completions    ",
+                                  value=f"{int(player_activity.count):,} --> {int(buffer_activity.count):,}")
             embed.add_embed_field(name=f"{player_activity.name} Rank",
                                   value=f"{int(buffer_activity.rank):,}")
 
         # This should not be needed as embed content is identical to that of Type.minigame so the two are combined.
         elif player_activity.type == Type.chest:
-            embed = DiscordEmbed(title=f"{player_obj.name} Has Opened : Barrows Chest",
-                                 description=f"Total Barrows Chests Opened : {int(buffer_activity.count):,}",
+            embed = DiscordEmbed(title=f"{player_obj.name} Opened : Barrows Chest",
                                  color=player_activity.colour)
+            embed.add_embed_field(name=f"Barrows Chests Opened    ",
+                                  value=f"{int(player_activity.count):,} --> {int(buffer_activity.count):,}")
             embed.add_embed_field(name=f"Barrows Rank", value=f"{int(buffer_activity.rank):,}")
 
         elif player_activity.type == Type.rifts:
-            embed = DiscordEmbed(title=f"{player_obj.name} Has Closed A Rift",
-                                 description=f"Total {player_activity.name} : {int(buffer_activity.count):,}",
+            embed = DiscordEmbed(title=f"{player_obj.name} Closed A Rift",
                                  color=player_activity.colour)
+            embed.add_embed_field(name=f"{player_activity.name}",
+                                  value=f"{int(player_activity.count):,} --> {int(buffer_activity.count):,}")
             embed.add_embed_field(name=f"Guardians Of The Rift Rank", value=f"{int(buffer_activity.rank):,}")
 
         else:
+            print("ERROR: Unaccounted for activity")
             return  # This should never execute as all activity types are covered.
 
-        #message.add_file(file=self.get_player_thumbnail(player_obj), filename='thumbnail.png')
-        #embed.set_author(name=f"{player_obj.name}", icon_url=f"attachment://thumbnail.png")
         embed.set_thumbnail(url=player_activity.icon_url)
         embed.set_timestamp()
         message.add_embed(embed)
