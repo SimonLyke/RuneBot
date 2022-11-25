@@ -48,7 +48,6 @@ class DiscordLogic:
         #embed.set_author(name=f"{player_obj.name}⠀", icon_url=f"attachment://thumbnail.png")
 
         embed.set_thumbnail(url=player_skill.icon_url)
-        embed.set_timestamp()
         message.add_embed(embed)
         message.execute()
         print("\nINFO : PUSHING LEVEL TO DISCORD")

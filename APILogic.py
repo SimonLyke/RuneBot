@@ -36,9 +36,9 @@ def api_call(player_name):
 
         except requests.exceptions.RequestException as err:
             # log requestexception
-            print(f"\nError : Requests : Exception, \nError : {err}\nSleeping : 60 Seconds", end="")
+            print(f"\nError : Requests : Exception, \nError : {err}\nSleeping : 60 Seconds")
         else:
-            print(f"Error : Unhandled Exception, \nError : {err}\nSleeping : 60 Seconds", end="")
+            print(f"Error : Unhandled Exception, \nError : {err}\nSleeping : 60 Seconds")
         time.sleep(60)  # only executes if response != 200
     return None  # only return None if retries are exhausted and still failed
 
