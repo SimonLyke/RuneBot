@@ -60,3 +60,5 @@ for you to populate
 .
 
 Any issues with the bot please let me know. Thanks.
+
+Licensed under GNU General Public License v3.0
