@@ -58,6 +58,11 @@ class DiscordLogic:
         player_activity = getattr(player_obj, activity_name)
         buffer_activity = getattr(buffer_obj, activity_name)
 
+        # this if statement is because the api sends -1 as the value for an unkilled boss or activity
+        # we dont want the bot to print out KC "-1 --> new value", so we change the value to 0 so it shows e.g "0 --> 5"
+        if player_activity.count == "-1":
+            player_activity.count = 0
+
         if player_activity.type == Type.boss:
             embed = DiscordEmbed(title=f"{player_obj.name} Killed {player_activity.name}",
                                  color=player_activity.colour)
