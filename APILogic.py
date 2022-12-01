@@ -21,7 +21,7 @@ import time
 def api_call(player_name):
     """
     Assigning the base API url to a variable each time this function executes would waste memory and GC processing.
-    while loop is used as we need to keep the bot retrying the request so that it won't crash if internet goes
+    for loop is used as we need to keep the bot retrying the request so that it won't crash if internet goes
     down or if request failed. This is so if hosted on external server or device, it should retry 3 times before
     skipping the player, this should account for mispelled usernames and other issues without hanging endlessly.
     An interval of 60 seconds on failed requests as to not take up unnecessary cpu cycles
@@ -38,7 +38,7 @@ def api_call(player_name):
             # log requestexception
             print(f"\nError : Requests : Exception, \nError : {err}\nSleeping : 60 Seconds")
         else:
-            print(f"Error : Unhandled Exception, \nError : {err}\nSleeping : 60 Seconds")
+            print(f"\nError : Unhandled Exception, \nError : {err}\nSleeping : 60 Seconds")
         time.sleep(60)  # only executes if response != 200
     return None  # only return None if retries are exhausted and still failed
 
