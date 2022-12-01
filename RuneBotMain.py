@@ -44,10 +44,11 @@ def check_updated_stats(player_name):
     #skills
     for skill in skills_list:  # if new level is higher than previous level then push level update to discord
         if not players.username[player_name].__getattribute__(skill).level is None:
-            if (players.buffer.__getattribute__(skill).level
-                    > players.username[player_name].__getattribute__(skill).level):
-                discord.push_level_up(player_obj=players.username[player_name],
-                                      buffer_obj=players.buffer, skill_name=skill)
+            if not players.username[player_name].__getattribute__(skill).level is "-1":
+                if (players.buffer.__getattribute__(skill).level
+                        > players.username[player_name].__getattribute__(skill).level):
+                    discord.push_level_up(player_obj=players.username[player_name],
+                                          buffer_obj=players.buffer, skill_name=skill)
     #activities
     for activity in activity_list:  # if new count is higher than previous count then push activity update to discord
         if not players.username[player_name].__getattribute__(activity).count is None:

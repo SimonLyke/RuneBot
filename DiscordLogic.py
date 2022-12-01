@@ -115,7 +115,7 @@ class DiscordLogic:
         elif player_activity.type == Type.rifts:
             embed = DiscordEmbed(title=f"{player_obj.name} Closed A Rift",
                                  color=player_activity.colour)
-            embed.add_embed_field(name=f"{player_activity.name}",
+            embed.add_embed_field(name=f"{player_activity.name}    ",
                                   value=f"{int(player_activity.count):,} --> {int(buffer_activity.count):,}")
             embed.add_embed_field(name=f"Guardians Of The Rift Rank", value=f"{int(buffer_activity.rank):,}")
 
