@@ -67,7 +67,7 @@ class Player:
         self.Smithing = Skill(6052182, "https://i.imgur.com/lSVT1Wj.png", "Smithing")
         self.Mining = Skill(2897541, "https://i.imgur.com/RX24N9A.png", "Mining")
         self.Herblore = Skill(1534737, "https://i.imgur.com/7m19V7r.png", "Herblore")
-        self.Agility = Skill(5388313, "https://i.imgur.com/QLCisV9.png", "Agility")
+        self.Agility = Skill(197379, "https://i.imgur.com/QLCisV9.png", "Agility")
         self.Thieving = Skill(197379, "https://i.imgur.com/qm0oJnd.png", "Thieving")
         self.Slayer = Skill(12762114, "https://i.imgur.com/uDHeiNw.png", "Slayer")
         self.Farming = Skill(697233, "https://i.imgur.com/9yJvyxc.png", "Farming")
