@@ -20,9 +20,6 @@ The embeds look like this :
 
 ![image](https://user-images.githubusercontent.com/94386835/203864532-c700ef2d-ab71-40ac-9fa3-4611c4008aac.png)
 
-
-In this example, this player has killed skotizo and completed a hard clue scroll since he last logged off the game.
-
 .
 .
 
