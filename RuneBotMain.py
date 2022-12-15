@@ -4,8 +4,8 @@ most efficient version of itself as using json rather than an SQLite database in
 However this bot was created to gain experience and for private use solely developed by the author listed below.
 
 @author : Simon Lyke
-@Version : 2.1.1
-@date : 20/11/2022
+@Version : 2.1.2
+@date : 15/12/2022
 @github : https://github.com/SimonLyke
 
 PLEASE LOOK AT README FOR INFORMATION ON HOW TO SETUP THE BOT FOR PRIVATE USE WITHIN A DISCORD
@@ -18,13 +18,14 @@ from DiscordLogic import DiscordLogic
 import time
 import copy
 import os
-import sys
 
 
 def update_buffer(player_name):
     api_data_list = filtered_api_data(player_name=player_name)
+
     if not api_data_list:
         return False # API Failure return false so if not update_buffer() executes
+
     for count, skill in enumerate(api_data_list):
         if count < len(skills_list):
             rank, level, xp = skill.split(',')
@@ -32,6 +33,7 @@ def update_buffer(player_name):
             buffer_skill.rank = rank
             buffer_skill.level = level
             buffer_skill.xp = xp
+
         else:
             rank, kc = skill.split(',')
             buffer_activity = players.buffer.__getattribute__(activity_list[(count - len(skills_list))])
@@ -61,6 +63,8 @@ def check_updated_stats(player_name):
 def update_player(player_name):
     # replace player object with buffer object instead of updating each value individually - both objects of same class
     # this method requires replacing 2 unique values in the buffer before replacing the player object with the buffer
+    if players.buffer.Overall.level < players.username[player_name].Overall.level:
+        return
     players.buffer.name = players.username[player_name].name
     players.buffer.thumbnail = players.username[player_name].thumbnail
     players.username[player_name] = copy.deepcopy(players.buffer)
@@ -72,24 +76,28 @@ def get_webhook_url():
             pass  # immediately pass in order to close the file
         print("Error: WebhookURL.txt Does Not Exist. File Created, Please Populate With Webhook URL")
         raise SystemExit
+
     if not os.path.getsize("WebhookURL.txt") == 0:
         with open("WebhookURL.txt", "r") as file:  # this is so webhook url is not on git
             webhook_url = file.readline()
         return webhook_url
+
     print("Error: WebhookURL.txt Empty. Please Populate With Webhook URL")
     raise SystemExit
 # ------------------------------------------------------------------------------------------------------- main function
 
 def main():
     while True:
-        print("\rUPDATING", end='')
+        print("UPDATING...\r", end='')  # return cursor to start of line and dont add newline at end of string
         for player in players.username:
             if not update_buffer(player):
                 print(f"Error : API Requests Failed For {player}")
                 continue
+
             check_updated_stats(player)
             update_player(player)
             players.export_json()
+
         time.sleep(60)  # interval of 60 seconds where python will not use cpu cycles
 
 

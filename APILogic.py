@@ -4,8 +4,8 @@ most efficient version of itself as using json rather than an SQLite database in
 However this bot was created to gain experience and for private use solely developed by the author listed below.
 
 @author : Simon Lyke
-@Version : 2.1.1
-@date : 20/11/2022
+@Version : 2.1.2
+@date : 15/12/2022
 @github : https://github.com/SimonLyke
 
 PLEASE LOOK AT README FOR INFORMATION ON HOW TO SETUP THE BOT FOR PRIVATE USE WITHIN A DISCORD
@@ -34,11 +34,11 @@ def api_call(player_name):
             if request.status_code == 200:
                 return request.text  # no guard clause needed as it will check and return
 
-        except requests.exceptions.RequestException as err:
-            # log requestexception
-            print(f"\nError : Requests : Exception, \nError : {err}\nSleeping : 60 Seconds")
+        except requests.exceptions.RequestException as err:  # log requestexception
+            print(f"Error : Requests : Exception, \nError : {err}\nSleeping : 60 Seconds")
+
         else:
-            print(f"\nError : Unhandled Exception, \nError : {err}\nSleeping : 60 Seconds")
+            print(f"Error : Unhandled Exception, \nError : {err}\nSleeping : 60 Seconds")
         time.sleep(60)  # only executes if response != 200
     return None  # only return None if retries are exhausted and still failed
 
