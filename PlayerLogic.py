@@ -28,10 +28,10 @@ activity_list = ['leaguePoints', 'bountyHunter', 'bountyRogue', 'clueAll', 'clue
                  'crazyArchaeologist', 'dagannothPrime', 'dagganothRex', 'dagganothSupreme', 'derangedArchaeologist',
                  'generalGraardor', 'giantMole', 'grotesqueGuardians', 'hespori', 'kalphiteQueen', 'kingBlackDragon',
                  'kraken', 'kreearra', 'kriltsutsaroth', 'mimic', 'nex', 'nightmare', 'phosanisNightmare', 'obor',
-                 'sarachnis',
-                 'scorpia', 'skotizo', 'tempoross', 'theGauntlet', 'theCorruptedGauntlet', 'theatreOfBlood',
-                 'theatreOfBloodHardMode', 'ThermonuclearSmokeDevil', 'tombsOfAmascut', 'tombsOfAmascutExpertMode',
-                 'tzKalZuk', 'tzTokJad', 'venenatis', 'vetion', 'vorkath', 'wintertodt', 'zalcano', 'zulrah']
+                 "phantomMuspah", 'sarachnis', 'scorpia', 'skotizo', 'tempoross', 'theGauntlet', 'theCorruptedGauntlet',
+                 'theatreOfBlood', 'theatreOfBloodHardMode', 'ThermonuclearSmokeDevil', 'tombsOfAmascut',
+                 'tombsOfAmascutExpertMode', 'tzKalZuk', 'tzTokJad', 'venenatis', 'vetion', 'vorkath', 'wintertodt',
+                 'zalcano', 'zulrah']
 
 
 class Type(Enum):
@@ -120,6 +120,7 @@ class Player:
         self.nightmare = Activity(Type.boss, "Nightmare", "https://i.imgur.com/PUJVzK6.png")
         self.phosanisNightmare = Activity(Type.minigame, "Phosani's Nightmare", "https://i.imgur.com/PUJVzK6.png")
         self.obor = Activity(Type.boss, "Obor", "https://i.imgur.com/DCGG89D.png")
+        self.phantomMuspah = Activity(Type.boss, "Phantom Muspah", "https://i.imgur.com/ch29CKd.png")
         self.sarachnis = Activity(Type.boss, "Sarachnis", "https://i.imgur.com/axpYan0.png")
         self.scorpia = Activity(Type.boss, "Scorpia", "https://i.imgur.com/NPFDZCH.png")
         self.skotizo = Activity(Type.boss, "Skotizo", "https://i.imgur.com/rhX85uf.png")
