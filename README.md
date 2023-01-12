@@ -5,13 +5,14 @@ However this bot was created to gain experience and for private use solely devel
 
 **@author** : Simon Lyke
 
-**@Version** : 2.1.1
+**@Version** : 2.1.2
 
-**@date** : 20/11/2022
+**@date** : 15/12/2022
 
 **@github** : https://github.com/SimonLyke
 
 .
+NOTE : DUE TO UPDATE ADDING NEW API ENTRY, PREVIOUS STORED PLAYER FILES ( PLAYER.JSON FILES ) WILL NEED TO BE DELETED SO THEY CAN BE GENERATED AGAIN.
 .
 
 The embeds look like this : 
