@@ -25,7 +25,6 @@ def update_buffer(player_name):
 
     if not api_data_list:
         return False # API Failure return false so if not update_buffer() executes
-
     for count, skill in enumerate(api_data_list):
         if count < len(skills_list):
             rank, level, xp = skill.split(',')
@@ -63,8 +62,10 @@ def check_updated_stats(player_name):
 def update_player(player_name):
     # replace player object with buffer object instead of updating each value individually - both objects of same class
     # this method requires replacing 2 unique values in the buffer before replacing the player object with the buffer
-    if players.buffer.Overall.level < players.username[player_name].Overall.level:
-        return
+    if not players.username[player_name].Overall.level is None:
+        if players.buffer.Overall.level < players.username[player_name].Overall.level:
+            return
+
     players.buffer.name = players.username[player_name].name
     players.buffer.thumbnail = players.username[player_name].thumbnail
     players.username[player_name] = copy.deepcopy(players.buffer)
@@ -86,6 +87,7 @@ def get_webhook_url():
     raise SystemExit
 # ------------------------------------------------------------------------------------------------------- main function
 
+
 def main():
     while True:
         print("UPDATING...\r", end='')  # return cursor to start of line and dont add newline at end of string
@@ -97,9 +99,7 @@ def main():
             check_updated_stats(player)
             update_player(player)
             players.export_json()
-
         time.sleep(60)  # interval of 60 seconds where python will not use cpu cycles
-
 
 
 if __name__ == "__main__":
