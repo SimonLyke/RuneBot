@@ -12,7 +12,9 @@ However this bot was created to gain experience and for private use solely devel
 **@github** : https://github.com/SimonLyke
 
 .
+
 NOTE : DUE TO UPDATE ADDING NEW API ENTRY, PREVIOUS STORED PLAYER FILES ( PLAYER.JSON FILES ) WILL NEED TO BE DELETED SO THEY CAN BE GENERATED AGAIN.
+
 .
 
 The embeds look like this : 
