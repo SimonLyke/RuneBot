@@ -4,8 +4,8 @@ most efficient version of itself as using json rather than an SQLite database in
 However this bot was created to gain experience and for private use solely developed by the author listed below.
 
 @author : Simon Lyke
-@Version : 2.1.2
-@date : 15/12/2022
+@Version : 2.2
+@date : 30/04/2023
 @github : https://github.com/SimonLyke
 
 PLEASE LOOK AT README FOR INFORMATION ON HOW TO SETUP THE BOT FOR PRIVATE USE WITHIN A DISCORD
@@ -23,12 +23,12 @@ skills_list = ['Overall', 'Attack', 'Defence', 'Strength', 'Hitpoints', 'Ranged'
 activity_list = ['leaguePoints', 'bountyHunter', 'bountyRogue', 'clueAll', 'clueBeginner', 'clueEasy', 'clueMedium',
                  'clueHard', 'clueElite', 'clueMaster', 'LMS', 'pvpArenaRank', 'soulWarsZeal', 'riftsClosed',
                  'abyssalSire',
-                 'alchemicalHydra', 'barrowsChests', 'bryophyta', 'callisto', 'cerberus', 'chambersOfXeric',
+                 'alchemicalHydra', 'artio' ,'barrowsChests', 'bryophyta', 'callisto', 'calvarion', 'cerberus', 'chambersOfXeric',
                  'chambersOfXericChallenge', 'chaosElemental', 'chaosFanatic', 'commanderZilyana', 'corporealBeast',
                  'crazyArchaeologist', 'dagannothPrime', 'dagganothRex', 'dagganothSupreme', 'derangedArchaeologist',
                  'generalGraardor', 'giantMole', 'grotesqueGuardians', 'hespori', 'kalphiteQueen', 'kingBlackDragon',
                  'kraken', 'kreearra', 'kriltsutsaroth', 'mimic', 'nex', 'nightmare', 'phosanisNightmare', 'obor',
-                 "phantomMuspah", 'sarachnis', 'scorpia', 'skotizo', 'tempoross', 'theGauntlet', 'theCorruptedGauntlet',
+                 "phantomMuspah", 'sarachnis', 'scorpia', 'skotizo', 'spindel', 'tempoross', 'theGauntlet', 'theCorruptedGauntlet',
                  'theatreOfBlood', 'theatreOfBloodHardMode', 'ThermonuclearSmokeDevil', 'tombsOfAmascut',
                  'tombsOfAmascutExpertMode', 'tzKalZuk', 'tzTokJad', 'venenatis', 'vetion', 'vorkath', 'wintertodt',
                  'zalcano', 'zulrah']
@@ -91,9 +91,11 @@ class Player:
         self.riftsClosed = Activity(Type.rifts, "Rifts Closed", "https://i.imgur.com/mTbKhlI.png")
         self.abyssalSire = Activity(Type.boss, "Abyssal Sire", "https://i.imgur.com/Ezlrc2h.png")
         self.alchemicalHydra = Activity(Type.boss, "Alchemical Hydra", "https://i.imgur.com/tIGR7du.png")
+        self.artio = Activity(Type.boss, "Artio", "https://i.imgur.com/0ugbKUC.png")
         self.barrowsChests = Activity(Type.chest, "Barrows Chests", "https://i.imgur.com/s7NK1Qp.png")
         self.bryophyta = Activity(Type.boss, "Bryophyta", "https://i.imgur.com/arnWNjt.png")
         self.callisto = Activity(Type.boss, "Callisto", "https://i.imgur.com/kJM9PAP.png")
+        self.calvarion = Activity(Type.boss, "Cal'varion", "https://i.imgur.com/YcKry3h.png")
         self.cerberus = Activity(Type.boss, "Cerberus", "https://i.imgur.com/fWoVz8s.png")
         self.chambersOfXeric = Activity(Type.raid, "Chambers Of Xeric", "https://i.imgur.com/WTPVASA.png")
         self.chambersOfXericChallenge = Activity(Type.raid, "Chambers Of Xeric Challenge Mode", "https://i.imgur.com/9PGp3p1.png")
@@ -124,6 +126,7 @@ class Player:
         self.sarachnis = Activity(Type.boss, "Sarachnis", "https://i.imgur.com/axpYan0.png")
         self.scorpia = Activity(Type.boss, "Scorpia", "https://i.imgur.com/NPFDZCH.png")
         self.skotizo = Activity(Type.boss, "Skotizo", "https://i.imgur.com/rhX85uf.png")
+        self.spindel = Activity(Type.boss, "Spindel", "https://i.imgur.com/hZqn7Yt.png")
         self.tempoross = Activity(Type.boss, "Tempoross", "https://i.imgur.com/gnys3sU.png")
         self.theGauntlet = Activity(Type.boss, "The Gauntlet", "https://i.imgur.com/kvIQwVL.png")
         self.theCorruptedGauntlet = Activity(Type.boss, "The Corrupted Gauntlet", "https://i.imgur.com/C1VDOWw.png")
