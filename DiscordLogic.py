@@ -75,7 +75,7 @@ class DiscordLogic:
                                   value=f"{int(buffer_activity.rank):,}")
 
         elif player_activity.type == Type.clue_all:
-            if not int(player_activity.count) % 50 == 0:  # if not multiple of 50 then return
+            if not int(buffer_activity.count) % 50 == 0:  # if not multiple of 50 then return
                 return
             embed = DiscordEmbed(title=f"{player_obj.name} Reached A Clue Scroll Milestone",
                                  color=player_activity.colour)

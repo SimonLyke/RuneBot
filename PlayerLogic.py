@@ -20,7 +20,7 @@ skills_list = ['Overall', 'Attack', 'Defence', 'Strength', 'Hitpoints', 'Ranged'
                'Woodcutting', 'Fletching', 'Fishing', 'Firemaking', 'Crafting', 'Smithing', 'Mining', 'Herblore',
                'Agility', 'Thieving', 'Slayer', 'Farming', 'Runecrafting', 'Hunter', 'Construction']
 
-activity_list = ['leaguePoints', 'bountyHunter', 'bountyRogue', 'clueAll', 'clueBeginner', 'clueEasy', 'clueMedium',
+activity_list = ['leaguePoints', 'bountyHunter', 'bountyRogue', 'legacyBountyHunter', 'legacyBountyRogue', 'clueAll', 'clueBeginner', 'clueEasy', 'clueMedium',
                  'clueHard', 'clueElite', 'clueMaster', 'LMS', 'pvpArenaRank', 'soulWarsZeal', 'riftsClosed',
                  'abyssalSire',
                  'alchemicalHydra', 'artio' ,'barrowsChests', 'bryophyta', 'callisto', 'calvarion', 'cerberus', 'chambersOfXeric',
@@ -78,6 +78,8 @@ class Player:
         self.leaguePoints = Activity(Type.league, "Twisted League", "https://i.imgur.com/m62Xpnw.png")
         self.bountyHunter = Activity(Type.minigame, "Bounty Hunter", "https://i.imgur.com/uiTkQUx.png")
         self.bountyRogue = Activity(Type.minigame, "Bounty Hunter Rogue", "https://i.imgur.com/uiTkQUx.png")
+        self.legacyBountyHunter = Activity(Type.minigame, "Bounty Hunter (Legacy)", "https://i.imgur.com/uiTkQUx.png")
+        self.legacyBountyRogue = Activity(Type.minigame, "Bounty Hunter Rogue (Legacy)", "https://i.imgur.com/uiTkQUx.png")
         self.clueAll = Activity(Type.clue_all, "Total Clue Scroll", "https://i.imgur.com/AdwEjjr.png")
         self.clueBeginner = Activity(Type.clue, "Beginner Clue Scroll", "https://i.imgur.com/pSmD4j9.png")
         self.clueEasy = Activity(Type.clue, "Easy Clue Scroll", "https://i.imgur.com/vvjnl3b.png")
