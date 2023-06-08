@@ -46,7 +46,8 @@ def api_call(player_name):
 # this function returns list of values filtered due to the api returning data such as
 # 0,0,0,12,12353,145,89,12334,51,21,1243235,123,14,-1,-1,-1,-1...    for example
 def filtered_api_data(player_name):
-    api_data = api_call(player_name).replace(' ', '')
-    if not api_data:
+    api_data = api_call(player_name)
+    if not api_data: # if api_call returns None
         return None
+    api_data = api_data.replace(' ', '')
     return list(filter(None, api_data.splitlines()))
