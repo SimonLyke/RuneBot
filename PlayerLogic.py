@@ -5,7 +5,7 @@ However this bot was created to gain experience and for private use solely devel
 
 @author : Simon Lyke
 @Version : 2.2
-@date : 30/04/2023
+@date : 01/08/2023
 @github : https://github.com/SimonLyke
 
 PLEASE LOOK AT README FOR INFORMATION ON HOW TO SETUP THE BOT FOR PRIVATE USE WITHIN A DISCORD
@@ -26,11 +26,11 @@ activity_list = ['leaguePoints', 'bountyHunter', 'bountyRogue', 'legacyBountyHun
                  'alchemicalHydra', 'artio' ,'barrowsChests', 'bryophyta', 'callisto', 'calvarion', 'cerberus', 'chambersOfXeric',
                  'chambersOfXericChallenge', 'chaosElemental', 'chaosFanatic', 'commanderZilyana', 'corporealBeast',
                  'crazyArchaeologist', 'dagannothPrime', 'dagganothRex', 'dagganothSupreme', 'derangedArchaeologist',
-                 'generalGraardor', 'giantMole', 'grotesqueGuardians', 'hespori', 'kalphiteQueen', 'kingBlackDragon',
+                 'dukeSucellus', 'generalGraardor', 'giantMole', 'grotesqueGuardians', 'hespori', 'kalphiteQueen', 'kingBlackDragon',
                  'kraken', 'kreearra', 'kriltsutsaroth', 'mimic', 'nex', 'nightmare', 'phosanisNightmare', 'obor',
                  "phantomMuspah", 'sarachnis', 'scorpia', 'skotizo', 'spindel', 'tempoross', 'theGauntlet', 'theCorruptedGauntlet',
-                 'theatreOfBlood', 'theatreOfBloodHardMode', 'ThermonuclearSmokeDevil', 'tombsOfAmascut',
-                 'tombsOfAmascutExpertMode', 'tzKalZuk', 'tzTokJad', 'venenatis', 'vetion', 'vorkath', 'wintertodt',
+                 'theLeviathon', 'theWhisperer', 'theatreOfBlood', 'theatreOfBloodHardMode', 'ThermonuclearSmokeDevil', 'tombsOfAmascut',
+                 'tombsOfAmascutExpertMode', 'tzKalZuk', 'tzTokJad', 'vardorvis', 'venenatis', 'vetion', 'vorkath', 'wintertodt',
                  'zalcano', 'zulrah']
 
 
@@ -110,6 +110,7 @@ class Player:
         self.dagganothRex = Activity(Type.boss, "Dagganoth Rex", "https://i.imgur.com/rV5ude7.png")
         self.dagganothSupreme = Activity(Type.boss, "Dagganoth Supreme", "https://i.imgur.com/oOgNkmR.png")
         self.derangedArchaeologist = Activity(Type.boss, "Deranged Archaeologist", "https://i.imgur.com/1VX25of.png")
+        self.dukeSucellus = Activity(Type.boss, "Duke Sucellus", "https://i.imgur.com/g1p7QFs.png")
         self.generalGraardor = Activity(Type.boss, "General Graardor", "https://i.imgur.com/dsC3rT5.png")
         self.giantMole = Activity(Type.boss, "Giant Mole", "https://i.imgur.com/CSjGiQP.png")
         self.grotesqueGuardians = Activity(Type.boss, "Grotesque Guardians", "https://i.imgur.com/sSkzo7L.png")
@@ -132,6 +133,8 @@ class Player:
         self.tempoross = Activity(Type.boss, "Tempoross", "https://i.imgur.com/gnys3sU.png")
         self.theGauntlet = Activity(Type.boss, "The Gauntlet", "https://i.imgur.com/kvIQwVL.png")
         self.theCorruptedGauntlet = Activity(Type.boss, "The Corrupted Gauntlet", "https://i.imgur.com/C1VDOWw.png")
+        self.theLeviathon = Activity(Type.boss, 'The Leviathon', "https://i.imgur.com/KRoIZJM.png")
+        self.theWhisperer = Activity(Type.boss, 'The Whisperer', "https://i.imgur.com/Xi9j7tn.png")
         self.theatreOfBlood = Activity(Type.raid, "Theatre Of Blood", "https://i.imgur.com/tYgPpZn.png")
         self.theatreOfBloodHardMode = Activity(Type.raid, "Theatre Of Blood Hard Mode", "https://i.imgur.com/tYgPpZn.png")
         self.ThermonuclearSmokeDevil = Activity(Type.boss, "Thermonuclear Smoke Devil", "https://i.imgur.com/7WN5AKv.png")
@@ -139,6 +142,7 @@ class Player:
         self.tombsOfAmascutExpertMode = Activity(Type.raid, "Tombs Of Amascut Expert Mode", "https://i.imgur.com/76EzlBt.png")
         self.tzKalZuk = Activity(Type.boss, "TzKal-Zuk", "https://i.imgur.com/Y835Sv6.png")
         self.tzTokJad = Activity(Type.boss, "TzTok-Jad", "https://i.imgur.com/ihr1yHm.png")
+        self.vardorvis = Activity(Type.boss, 'Vardorvis', "https://i.imgur.com/eGAjnMj.png")
         self.venenatis = Activity(Type.boss, "Venenatis", "https://i.imgur.com/RqgdOgJ.png")
         self.vetion = Activity(Type.boss, "Vetion", "https://i.imgur.com/aVt30z5.png")
         self.vorkath = Activity(Type.boss, "Vorkath", "https://i.imgur.com/Kg3xR1G.png")
