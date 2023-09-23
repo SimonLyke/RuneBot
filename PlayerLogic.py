@@ -20,7 +20,7 @@ skills_list = ['Overall', 'Attack', 'Defence', 'Strength', 'Hitpoints', 'Ranged'
                'Woodcutting', 'Fletching', 'Fishing', 'Firemaking', 'Crafting', 'Smithing', 'Mining', 'Herblore',
                'Agility', 'Thieving', 'Slayer', 'Farming', 'Runecrafting', 'Hunter', 'Construction']
 
-activity_list = ['leaguePoints', "Deadman",'bountyHunter', 'bountyRogue', 'legacyBountyHunter', 'legacyBountyRogue', 'clueAll', 'clueBeginner', 
+activity_list = ['leaguePoints', "deadman",'bountyHunter', 'bountyRogue', 'legacyBountyHunter', 'legacyBountyRogue', 'clueAll', 'clueBeginner', 
                  'clueEasy', 'clueMedium', 'clueHard', 'clueElite', 'clueMaster', 'LMS', 'pvpArenaRank', 'soulWarsZeal', 'riftsClosed',
                  'abyssalSire',
                  'alchemicalHydra', 'artio' ,'barrowsChests', 'bryophyta', 'callisto', 'calvarion', 'cerberus', 'chambersOfXeric',
@@ -76,6 +76,7 @@ class Player:
         self.Construction = Skill(12885512, "https://i.imgur.com/lLrIp2H.png", "Construction")
         # creating 'Activity' objects
         self.leaguePoints = Activity(Type.league, "Twisted League", "https://i.imgur.com/m62Xpnw.png")
+        self.deadman = Activity(Type.league, "Deadman Mode", "https://i.imgur.com/vlBboRP.png")
         self.bountyHunter = Activity(Type.minigame, "Bounty Hunter", "https://i.imgur.com/uiTkQUx.png")
         self.bountyRogue = Activity(Type.minigame, "Bounty Hunter Rogue", "https://i.imgur.com/uiTkQUx.png")
         self.legacyBountyHunter = Activity(Type.minigame, "Bounty Hunter (Legacy)", "https://i.imgur.com/uiTkQUx.png")
