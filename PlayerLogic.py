@@ -20,8 +20,8 @@ skills_list = ['Overall', 'Attack', 'Defence', 'Strength', 'Hitpoints', 'Ranged'
                'Woodcutting', 'Fletching', 'Fishing', 'Firemaking', 'Crafting', 'Smithing', 'Mining', 'Herblore',
                'Agility', 'Thieving', 'Slayer', 'Farming', 'Runecrafting', 'Hunter', 'Construction']
 
-activity_list = ['leaguePoints', 'bountyHunter', 'bountyRogue', 'legacyBountyHunter', 'legacyBountyRogue', 'clueAll', 'clueBeginner', 'clueEasy', 'clueMedium',
-                 'clueHard', 'clueElite', 'clueMaster', 'LMS', 'pvpArenaRank', 'soulWarsZeal', 'riftsClosed',
+activity_list = ['leaguePoints', "Deadman",'bountyHunter', 'bountyRogue', 'legacyBountyHunter', 'legacyBountyRogue', 'clueAll', 'clueBeginner', 
+                 'clueEasy', 'clueMedium', 'clueHard', 'clueElite', 'clueMaster', 'LMS', 'pvpArenaRank', 'soulWarsZeal', 'riftsClosed',
                  'abyssalSire',
                  'alchemicalHydra', 'artio' ,'barrowsChests', 'bryophyta', 'callisto', 'calvarion', 'cerberus', 'chambersOfXeric',
                  'chambersOfXericChallenge', 'chaosElemental', 'chaosFanatic', 'commanderZilyana', 'corporealBeast',
