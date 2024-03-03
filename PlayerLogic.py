@@ -28,7 +28,7 @@ activity_list = ['leaguePoints', "deadman",'bountyHunter', 'bountyRogue', 'legac
                  'crazyArchaeologist', 'dagannothPrime', 'dagganothRex', 'dagganothSupreme', 'derangedArchaeologist',
                  'dukeSucellus', 'generalGraardor', 'giantMole', 'grotesqueGuardians', 'hespori', 'kalphiteQueen', 'kingBlackDragon',
                  'kraken', 'kreearra', 'kriltsutsaroth', 'mimic', 'nex', 'nightmare', 'phosanisNightmare', 'obor',
-                 "phantomMuspah", 'sarachnis', 'scorpia', 'skotizo', 'spindel', 'tempoross', 'theGauntlet', 'theCorruptedGauntlet',
+                 "phantomMuspah", 'sarachnis', 'scorpia', 'scurrius', 'skotizo', 'spindel', 'tempoross', 'theGauntlet', 'theCorruptedGauntlet',
                  'theLeviathon', 'theWhisperer', 'theatreOfBlood', 'theatreOfBloodHardMode', 'ThermonuclearSmokeDevil', 'tombsOfAmascut',
                  'tombsOfAmascutExpertMode', 'tzKalZuk', 'tzTokJad', 'vardorvis', 'venenatis', 'vetion', 'vorkath', 'wintertodt',
                  'zalcano', 'zulrah']
@@ -129,6 +129,7 @@ class Player:
         self.phantomMuspah = Activity(Type.boss, "Phantom Muspah", "https://i.imgur.com/ch29CKd.png")
         self.sarachnis = Activity(Type.boss, "Sarachnis", "https://i.imgur.com/axpYan0.png")
         self.scorpia = Activity(Type.boss, "Scorpia", "https://i.imgur.com/NPFDZCH.png")
+        self.scurrius = Activity(Type.boss, "Scurries", "https://i.imgur.com/gAh4FGg.png")
         self.skotizo = Activity(Type.boss, "Skotizo", "https://i.imgur.com/rhX85uf.png")
         self.spindel = Activity(Type.boss, "Spindel", "https://i.imgur.com/hZqn7Yt.png")
         self.tempoross = Activity(Type.boss, "Tempoross", "https://i.imgur.com/gnys3sU.png")
