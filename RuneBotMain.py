@@ -45,7 +45,7 @@ def check_updated_stats(player_name):
     #skills
     for skill in skills_list:  # if new level is higher than previous level then push level update to discord
         if not players.username[player_name].__getattribute__(skill).level is None:
-            if not int(players.username[player_name].__getattribute__(skill).level) == -1:
+            if not int(players.username[player_name].__getattribute__(skill).level) < 1: # dont run if player level 1 or less. as this could be due to API bug where u go from e.g lvl 1 -> 50 if you drop off the high scores
                 if (abs(int(players.buffer.__getattribute__(skill).level))
                         > abs(int(players.username[player_name].__getattribute__(skill).level))):
                     discord.push_level_up(player_obj=players.username[player_name],
